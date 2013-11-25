@@ -1,1 +1,64 @@
-CS-445: Hostel 21 project
+==============================================================================
+CS445 HOSTEL21 PROJECT
+Submitted by : SANDEEP GUDDEKOPPA SURESH
+CWID: A20275530
+==============================================================================
+
+
+------------------------------------------------------------------------------
+Development and testing envirnoment
+------------------------------------------------------------------------------
+Operating System: Ubuntu 13.04
+Language: Java
+Development IDE: Eclipse
+build tool: ANT
+Unit test framework/tool: Junit / Code Pro
+Code coverage framework/tool: Eclemma
+------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------
+Content organization (location)
+------------------------------------------------------------------------------
+Source Code: CS445-Project/Hostel21/src
+unit test source code: CS445-Project/Hostel21/test
+report/summary: CS445-Project/CS445-Project-Report.pdf
+Command Help : CS445-Project/CS445-Project-Commands.pdf
+Project Memo : CS445-Project/CS445-Project-Memo.pdf
+Hostel 21 application jar: CS445-Project/Hostel21/build/jar/h21.jar
+Original Diagrams: CS445-Project/diagrams
+
+Web based project which I abondoned because of strict xml requirements
+can be found in WebHostel21.zip. You need eclipse to run the code. Most of the
+things work here but not thoroughly tested.
+------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------
+Building and Running the program
+------------------------------------------------------------------------------
+Building:
+1. From terminal go to base project directory CS445-Project/Hostel21
+2. invoke "ant all" to compile the code and generate reports (the simplest)
+3. You can use "ant clean" to clean the project.
+
+
+Running:
+1. After building the code go to CS445-Project/Hostel21/build/jar
+2. You should see h21.jar if build is successful
+3. From terminal invoke "java -jar h21.jar" with appropriate arguments.
+   The list of commands supported can be found in CS445-Project-Commands.pdf
+4. Instead of "java -jar h21.jar" you can use h21 shell script located in 
+   build/jar if you want avoid typing long commands.
+   Here is an example: use "./h21 admin load abc.xml" instead of 
+   "java -jar h21.jar admin load abc.xml"
+   The h21 shell script is automatically copied from scripts folder 
+   to build/jar folder when you call "ant all".
+--------------
+C A U T I O N:
+--------------
+Every time you use commands "ant all" and "ant clean" the build folder is 
+deleted. Hence all the database files created by h21.jar in jar folder
+(hidden files) will also get deleted. If you dont want this to happen then
+copy h21.jar and h21 to a different location after build or before using it.
+------------------------------------------------------------------------------

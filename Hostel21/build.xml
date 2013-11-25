@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<project name="Hostel21" basedir="." default="all">
+  
+  
+  <!--This is where project properties are defined-->
+  <property file="build.properties"/>
+  
+  
+  <!--The main classpath hopefully its going to be used at multiple
+      palces Hence not under any targer! -->
+  <path id="main-classpath">
+        <fileset dir="${dir.lib}" includes="**/*.jar"/>
+  </path>
+  
+  
+  <!-- This cleans everything! -->
+  <target name="clean">
+    <delete dir="${dir.build}"/>
+  </target>
+  
+  
+  <!-- Target to initialize build -->
+  <target name="prepare">
+    <mkdir dir="${dir.build}"/>
+    <mkdir dir="${dir.class}"/>
+    <mkdir dir="${dir.jar}"/>
+    <exec executable="cp">
+      <arg line="${dir.scripts}/h21 ${dir.jar}"/>
+    </exec>
+  </target>
+  
+
+  <!-- Target to compile the application -->
+  <target name="build_app" depends="prepare">
+    <javac srcdir="${dir.src}" destdir="${dir.class}" classpathref="main-classpath" includeantruntime="false"/>
+  </target>
+
+
+  <!-- Target to create the jar -->  
+  <target name="create_jar" depends="build_app">
+    <jar destfile="${dir.jar}/h21.jar" basedir="${dir.class}">
+      <manifest>
+				<attribute name="Main-Class" value="hostel.app.h21"/>
+        <attribute name="Author" value="${author.name}"/>
+        <attribute name="CWID" value="${author.cwid}"/>
+      </manifest>
+      <zipfileset src="${dir.lib}/commons-cli-1.2/commons-cli-1.2.jar"/>
+    </jar>
+  </target>
+  
+  
+  <!-- DO ALL -->
+  <target name="all" depends="clean,create_jar">
+  <!-- nothing to do here! -->
+  </target>
+  
+  
+</project>
