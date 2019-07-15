@@ -28,7 +28,7 @@ Project Memo : CS445-Project/CS445-Project-Memo.pdf
 Hostel 21 application jar: CS445-Project/Hostel21/build/jar/h21.jar
 Original Diagrams: CS445-Project/diagrams
 
-Web based project which I abondoned because of strict xml requirements
+Web based project which I abandoned because of strict xml requirements
 can be found in WebHostel21.zip. You need eclipse to run the code. Most of the
 things work here but not thoroughly tested.
 ------------------------------------------------------------------------------
